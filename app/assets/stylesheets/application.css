@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+	h1{ 
+  	padding: .2em; 
+    margin: 0;
+	}
+  #products { 
+  	float:left;
+    width: 500px; 
+    margin-right: 2em; 
+	}
+  #cart {
+  	width: 200px; 
+    float: left; 
+    margin-top: 1em; 
+	}
+  #cart ol { 
+  	margin: 0; 
+    padding: 1em 0 1em 3em; 
+	}
+	ul{
+  	list-style:none;
+	}
+	h2{
+  	visibility:hidden;
+	}
+	#task_list{
+  	border:2px solid silver;
+	}
+	li:hover{
+	  cursor:pointer;
+	}
+	.category_div{
+	  float:bottom;width:300px;padding-left:300px;
+	}
+	#task_div{
+  	float:right;width:300px;padding-right:300px;
+	}
+	.placeholder{
+	  color:red;
+	}
+	h3{
+	  text-align:center;
+	  cursor:pointer;
+	}
+	td{
+  	padding:20px;
+	}
+	.button{ 
+		padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+ 		-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+		float:right;
+		margin:10px;
+		text-decoration:none;
+	}
+
+	#show_all{
+		float:right;			
+	}

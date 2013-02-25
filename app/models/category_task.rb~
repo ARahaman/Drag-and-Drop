@@ -1,0 +1,4 @@
+class CategoryTask < ActiveRecord::Base
+  attr_accessible :categorie_id, :task_id
+	belongs_to :category, :polymorphic => true
+end

@@ -1,0 +1,55 @@
+<%= link_to "Add Category", add_category_categorie_index_path , :remote=>true, :class=>"button" %>
+<%= link_to "Add Task", add_task_task_index_path , :remote=>true, :class=>"button" 	%>
+
+<table>
+	<tr>
+		<td>
+			<a href="#" id="show_all">Show All</a><br/>
+			<% @categories.each do |category| %>
+				<div class="category_div">
+					<div class="category" id=<%= category.id %>>
+		  				<h3 class="ui-widget-header">
+	 		  				<%= category.name %> (<%= (CategoryTask.find_all_by_categorie_id(category.id)).count%>)
+  						</h3>
+							<div class="ui-widget-content" id=<%= category.id %>div>
+									<ol>
+										<% CategoryTask.find_all_by_categorie_id(category.id).each do|x| %>
+											<li><%= Task.find(x.task_id).name %></li>
+										<% end %>
+										<li class="placeholder">Add tasks here</li>
+									</ol>
+							</div>
+					</div>
+						<%= link_to "Edit", edit_category_categorie_path(category.id) %>
+				</div>
+				<% end %>
+			</td>
+			<td>
+				<div id="task_div">
+					<div id="tasks">
+						<h3 class="ui-widget-header">List of Tasks</h3>
+						<div id="task_list">
+							<h2><a href="#"></a></h2>
+							<div>
+								<ul>
+									<% @tasks.each do|task| %>
+										<li id=<%=task.id%>><%= task.name %> <%= link_to "Edit", edit_task_path(task.id) %></li>
+									<%end%>
+								</ul>
+							</div>
+						</div>
+					</div>	
+				</div>
+		</td>
+	</tr>
+</table>
+
+<br/>
+
+<div id="task"></div>
+<div id="category"></div>
+
+<form action=<%= add_task_to_category_task_index_path 	%> id='task_assign_form'>
+	<input type="hidden" id="task_id" name="task_id">
+	<input type="hidden" id="category_id" name="category_id">
+</form>
